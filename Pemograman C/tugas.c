@@ -1,27 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int main() {
-    // for (int i = 0; i <= 10; i += 2) {
-    //     printf("Perulangan ke-%d \n", i);
+
+    // int a;
+    // int b[5];
+
+    // for (int i = 0; i <= 5; i++) {
+    //     printf("masukkan nilai b ke-%d: ", i);
+    //     scanf("%d", &b[i]);
+    // }
+    // for (int j = 0; j <= 5; j++) {
+    //     printf("nilai b ke-%d: %d\n", j, b[j]);
     // }
 
-    // int counter = 5;
-    // while (counter > 0) {
-    //     printf("%d\n", counter);
-    //     counter--;
-    // }
-
-    // for (int i = 0; i < 2; i++) {
-    //     for (int j = 0; j< 2; j++) {
-    //         printf("i=%d j=%d\n", i, j);
-    //     }
-    // }
-
-    for (int i = 0; i < 10; i++) {
-        if (i == 5) {
-            break;
-        }
-        printf("%d\n", i);
-    }
+    // printf("masukkan nilai a: ");
+    // scanf("%d", &a);
+    // printf("nilai a adalah %d", a);
     return 0;
 }
