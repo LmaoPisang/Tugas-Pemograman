@@ -1,23 +1,45 @@
-#include "sorting.h"
+#include "pengurutan.h"
 
-void SelectionSort(int arr[], int N) {
+// fungsi selection sort ascend
+void selection_sort_asc(int data[], int jumlah) {
+    // deklarasi variabel
+    int i, j, posisi;
+    
+    // perulangan disetiap putaran
+    for (i = 0; i < jumlah - 1; i++) {
+        // posisi data yang paling kecil
+        posisi = i;   
 
-    // Start with the whole array as unsored and one by
-  	// one move boundary of unsorted subarray towards right
-    for (int i = 0; i < N - 1; i++) {
-
-        // Find the minimum element in unsorted array
-        int min_idx = i;
-        for (int j = i + 1; j < N; j++) {
-            if (arr[j] < arr[min_idx]) {
-                min_idx = j;
+        // perulangan dalam 1 putaran
+        for (j = i + 1; j < jumlah; j++) {
+            // jika data dengan indeks j lebih kecil dari nilai data dengan indeks posisi maka ubah nilai posisi
+            if (data[j] < data[posisi]) {
+                posisi = j;
             }
         }
+        // menukar data ke-i dengan data yang paling kecil 
+        swap(&data[i], &data[posisi]);
+    }
+}
 
-        // Swap the found minimum element with the first
-        // element in the unsorted part
-        int temp = arr[min_idx];
-        arr[min_idx] = arr[i];
-        arr[i] = temp;
+// fungsi insertion sort descend
+void selection_sort_desc(int data[], int jumlah) {
+    // deklarasi variabel
+    int i, j, posisi;
+
+    // perulangan disetiap putaran
+    for (i = 0; i < jumlah - 1; i++) {
+        // posisi data yang paling besar 
+        posisi = i;
+
+        // perulangan dalam 1 putaran
+        for (j = i + 1; j < jumlah; j++) {
+            // jika data dengan indeks j lebih besar dari nilai data dengan indeks posisi maka ubah nilai posisi
+            if (data[j] > data[posisi]) {
+                posisi = j;
+            }
+        }
+        // menukar data ke-i dengan data yang paling kecil
+        swap(&data[i], &data[posisi]);
     }
 }

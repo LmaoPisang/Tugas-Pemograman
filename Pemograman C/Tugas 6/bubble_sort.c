@@ -1,22 +1,35 @@
-#include "sorting.h"
+#include "pengurutan.h"
 
-void swap(int *arr, int i, int j)
-{
-    int temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
+// metode pengurutan bubble sort ascend
+void bubble_sort_asc(int data[], int jumlah) {
+    // deklarasi variabel
+    int i, j;
+
+    // perulangan untuk setiap putaran
+    for (i = 0; i < jumlah - 1; i++) {
+        // perulangan untuk membandingkan nilai dalam satu putaran
+        for (j = 0; j < jumlah - 1 - i; j++) {
+            // kondisi jika nilai saat ini lebih besar daripada selanjutnya jalankan fungsi swap
+            if (data[j] > data[j + 1]) {
+                swap(&data[j], &data[j+1]);
+            }
+        }
+    }
 }
 
-void BubbleSort(int arr[], int n)
-{
-    for (int i = 0; i < n - 1; i++)
-    {
+// metode pengurutan bubble sort descend
+void bubble_sort_desc(int data[], int jumlah) {
+    // deklarasi variabel
+    int i, j;
 
-        // Last i elements are already in place, so the loop will only num n - i - 1 times
-        for (int j = 0; j < n - i - 1; j++)
-        {
-            if (arr[j] > arr[j + 1])
-                swap(arr, j, j + 1);
+    // perulangan untuk membandingkan nilai dalam satu putaran
+    for (i = 0; i < jumlah - 1; i++) {
+        // perulangan untuk membandingkan nilai dalam satu putaran
+        for (j = 0; j < jumlah - 1 - i; j++) {
+            // kondisi jika nilai saat ini lebih kecil daripada selanjutnya jalankan fungsi swap
+            if (data[j] < data[j + 1]) {
+                swap(&data[j], &data[j+1]);
+            }
         }
     }
 }
